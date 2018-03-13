@@ -1,4 +1,4 @@
-package com.hpe.hp;
+package test.hp.leetcode;
 
 /**
  * Definition for singly-linked list.
