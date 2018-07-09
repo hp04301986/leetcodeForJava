@@ -1,7 +1,7 @@
 package test.hp.leetcode;
 
 /**
- * ¾­µä°Ë»ÊºóÎÊÌâ
+ * å…«çš‡å
  * @author pihe
  *
  */
@@ -12,25 +12,26 @@ public class EightQueen {
 	}
 	
 	static final int MAX_NUM=8;
+	//æ£‹ç›˜
 	int chessBoard[][] = new int[MAX_NUM][MAX_NUM];
 	
 	/**
-	 * ÅĞ¶ÏÂäµãÊÇ·ñºÏ¹æ
-	 * @param x ºá×ø±ê£¬±íÊ¾ÁĞÊı
-	 * @param y ×İ×ø±ê£¬±íÊ¾ĞĞÊı
+	 * æ£€æŸ¥è½ç‚¹æ˜¯å¦ç¬¦åˆè§„åˆ™
+	 * @param x åˆ—æ•°
+	 * @param y è¡Œæ•°
 	 * @return
 	 */
 	boolean check(int x, int y) {
 		for(int i=0; i<y; i++) {
-			//¼ì²é×İÏò
+			//æ£€æŸ¥çºµå‘
 			if(chessBoard[x][i] == 1) {
 				return false;
 			}
-			//¼ì²é×ó²àĞ±Ïò
+			//æ£€æŸ¥å·¦ä¾§æ–œå‘
 			if((x-1-i >= 0) && chessBoard[x-1-i][y-1-i] == 1) {
 				return false;
 			}
-			//¼ì²éÓÒ²àĞ±Ïò
+			//æ£€æŸ¥å³ä¾§æ–œå‘
 			if((x+1+i < MAX_NUM) && chessBoard[x+1+i][y-1-i] == 1) {
 				return false;
 			}
@@ -39,23 +40,25 @@ public class EightQueen {
 	}
 	
 	/**
-	 * °Ú·Å8»Êºó
-	 * @param y ×İ×ø±ê£¬±íÊ¾ĞĞÊı
+	 * é€’å½’å›æº¯
+	 * @param y è¡Œæ•°
 	 * @return
 	 */
 	boolean settleQueen(int y) {
-		//ĞĞÊı³¬¹ı8£¬ËµÃ÷ÒÑ¾­ÕÒµ½´ğ°¸ÁË
+		//è¡Œæ•°è¶…è¿‡8ï¼Œè¯´æ˜å·²ç»æ‰¾åˆ°ç­”æ¡ˆ
 		if (y == MAX_NUM) {
 			return true;
 		}
-		//±éÀúµ±Ç°ĞĞ£¬Öğ¸ñÑéÖ¤
+		//éå†å½“å‰è¡Œï¼Œé€ä¸€æ ¼å­éªŒè¯
 		for(int i = 0; i<MAX_NUM; i ++) {
-			//Îªµ±Ç°ĞĞÇåÁã£¬ÒÔÃâÔÚ»ØËİÊ±³öÏÖÔàÊı¾İ
+			//ä¸ºå½“å‰è¡Œæ¸…é›¶ï¼Œä»¥å…åœ¨å›æº¯çš„æ—¶å€™å‡ºç°è„æ•°æ®
 			for(int x = 0; x< MAX_NUM; x++) {
 				chessBoard[x][y] = 0;
 			}
+			//æ£€æŸ¥æ˜¯å¦ç¬¦åˆè§„åˆ™ï¼Œå¦‚æœç¬¦åˆï¼Œæ›´æ”¹å…ƒç´ å€¼å¹¶è¿›ä¸€æ­¥é€’å½’
 			if(check(i, y)) {
 				chessBoard[i][y] = 1;
+				//é€’å½’å¦‚æœè¿”å›trueï¼Œ è¯´æ˜ä¸‹å±‚å·²ç»æ‰¾åˆ°è§£æ³•ï¼Œæ— éœ€ç»§ç»­å¾ªç¯
 				if(settleQueen(y+1)) {
 					return true;
 				}
@@ -63,11 +66,11 @@ public class EightQueen {
 		}
 		return false;
 	}
-	
+	/**
+	 * æ‰“å°æ£‹ç›˜å½“å‰å€¼
+	 */
 	void printCheckBoard() {
-		//ºá×ø±ê£¬±íÊ¾ÁĞÊı
 		for(int j = 0; j < MAX_NUM; j ++) {
-			//×İ×ø±ê£¬±íÊ¾ĞĞ
 			for(int i = 0; i < MAX_NUM; i ++) {
 				System.out.print(chessBoard[i][j]);
 			}
