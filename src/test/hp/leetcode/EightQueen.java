@@ -17,8 +17,8 @@ public class EightQueen {
 	
 	/**
 	 * 检查落点是否符合规则
-	 * @param x 列数
-	 * @param y 行数
+	 * @param x 行数
+	 * @param y 列数
 	 * @return
 	 */
 	boolean check(int x, int y) {
