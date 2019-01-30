@@ -1,7 +1,7 @@
 package test.hp.leetcode;
 
 /**
- * ¸÷ÖÖÅÅÐòËã·¨
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨
  * @author pihe
  *
  */
@@ -21,7 +21,7 @@ public class Sort {
 	}
 	
 	/**
-	 * Ã°ÅÝ
+	 * Ã°ï¿½ï¿½
 	 * @param a
 	 * @return
 	 */
@@ -43,7 +43,7 @@ public class Sort {
 	}
 	
 	/**
-	 * Ñ¡ÔñÅÅÐò
+	 * Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param a
 	 * @return
 	 */
@@ -69,7 +69,7 @@ public class Sort {
 	}
 	
 	/**
-	 * ²åÈëÅÅÐò
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param a
 	 * @return
 	 */
@@ -93,7 +93,7 @@ public class Sort {
 	}
 	
 	/**
-	 * ¿ìËÙÅÅÐò
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param a
 	 * @param left
 	 * @param right
@@ -108,7 +108,7 @@ public class Sort {
 	}
 	
 	/**
-	 * ÕÒ±ê×¼Ë÷Òý
+	 * ï¿½Ò±ï¿½×¼ï¿½ï¿½ï¿½ï¿½
 	 * @param a
 	 * @param left
 	 * @param right
@@ -125,7 +125,7 @@ public class Sort {
 			while((left<right) && a[left] <= standard) {
 				left ++;
 			}
-			//½»»»
+			//ï¿½ï¿½ï¿½ï¿½
 			temp = a[right];
 			a[right] = a[left];
 			a[left] = temp;
