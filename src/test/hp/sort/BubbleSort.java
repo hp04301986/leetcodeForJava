@@ -3,33 +3,25 @@ package test.hp.sort;
 public class BubbleSort {
 	
 	public static void main(String[] args) {
-		
+		int[] nums = {5, 4, 3, 6, 7};
+		nums = new BubbleSort().sort(nums);
+		for(int i : nums) {
+			System.out.print(i);
+		}
 	}
 	
-	private static void sort(int array[]) {
-		int tmp = 0;
-		//最后一次交换的位置
-		int lastExchangeIndex = 0;
-		//无序数列的边界，每次比较只需要比到这里为止
-		int sortBorder = array.length - 1;
-		for(int i = 0; i < array.length; i ++) {
-			//有序标志，每一轮的初始是true
-			boolean isSorted = true;
-			for(int j = 0; j < sortBorder; j++) {
-				if(array[j] > array[j + 1]) {
-					tmp = array[j];
-					array[j] = array[j+1];
-					array[j + 1] = tmp;
-					//有元素交换，所以不是有序，标记为false
-					isSorted = false;
-					//把无序数列的边界更新为最后一次交换元素
-					lastExchangeIndex = j;
+	private int[] sort(int[] nums) {
+		if(nums == null || nums.length < 2) return nums;
+		int l = nums.length;
+		for(int i = 0; i < l-1; i ++) {
+			for(int j = i + 1; j < l; j ++) {
+				int tmp = nums[i];
+				if(nums[j] < tmp) {
+					nums[i] = nums[j];
+					nums[j] = tmp;
 				}
 			}
-			sortBorder = lastExchangeIndex;
-			if(isSorted) {
-				break;
-			}
 		}
+		return nums;
 	}
 }
