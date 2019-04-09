@@ -30,10 +30,8 @@ public class HappyNumber202 {
 		Set<Long> set = new HashSet<Long>();
 		while(sum != 1l) {
 			sum = getSum(sum);
-			if(set.contains(sum)) {
+			if(!set.add(sum)) {
 				return false;
-			}else {
-				set.add(sum);
 			}
 		}
 		return true;
